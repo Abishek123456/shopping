@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing:border-box}
+body,p	
+{font-family: Verdana,sans-serif;}
+.mySlides {display:none}
+p
+{
+font-size:36px;
+color:red;
+}
+.slideshow-container {
+max-width: 1000px;
+position: relative;
+margin: auto;
+}
+.text {
+color: #f2f2f2;
+font-size: 15px;
+padding: 8px 12px;
+position: absolute;
+bottom: 8px;
+width: 100%;
+text-align: center;
+}
+.dot {
+height: 13px;
+width: 13px;
+margin: 0 2px;
+background-color: #bbb;
+border-radius: 50%;
+display: inline-block;
+transition: background-color 0.6s ease;
+}
+.active {
+background-color: #717171;
+}
+img
+{
+margin-top:10px;
+width:100%;
+height:400px;
+}
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+animation-name: fade;
+animation-duration: 1.5s;
+}
+@-webkit-keyframes fade {
+from {opacity: .4}
+to {opacity: 1}
+}
+@keyframes fade {
+from {opacity: .4}
+to {opacity: 1}
+}
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+table
+{
+font-family: arial,sans_serif;
+border_collapse:collapse;
+width:100%;
+}
+td
+{
+border:2px solid blue;
+padding:10px;
+}
+</style>
+<body bgcolor="lightgrey">
+<center><p>ROYAL TOUCH-A WORLD FOR WOMEN</p></center>
+<table>
+<tr>
+<td><center>JEANS</center></td>
+<td><center><a href="file:///C:/Users/Abishek/Desktop/tops.html">TOPS</a></center></td>
+<td><center>KURTI</center></td>
+<td><center>CHUDIDAR</center></td>
+<td><center>SAREES</center></td>
+<td><center>ACCESSORIES</center></td>
+<td><center>ABOUT US</center></td>
+<td><center><a href="file:///C:/Users/Abishek/Desktop/signin.html">LOGIN</a></center></td>
+<td><center><a href="file:///C:/Users/Abishek/Desktop/login.html">SIGNUP</a></center></td>
+</tr>
+</table>
+<div class="slideshow-container">
+<div class="mySlides fade">
+<imgsrc="C:\Users\Abishek\Downloads\1">
+</div>
+<div class="mySlides fade">
+<imgsrc="C:\Users\Abishek\Downloads\2.jpg">
+</div>
+<div class="mySlides fade">
+<imgsrc="C:\Users\Abishek\Downloads\3.jpg">
+</div>
+</div>
+<br>
+<div style="text-align:center">
+<span class="dot"></span>
+<span class="dot"></span>
+<span class="dot"></span>
+</div>
+<script>
+varslideIndex = 0;
+showSlides();
+functionshowSlides() {
+vari;
+var slides = document.getElementsByClassName("mySlides");
+var dots = document.getElementsByClassName("dot");
+for (i = 0; i<slides.length; i++) {
+slides[i].style.display = "none";
+    }
+slideIndex++;
+if (slideIndex>slides.length) {slideIndex = 1}
+for (i = 0; i<dots.length; i++) {
+dots[i].className = dots[i].className.replace(" active", "");
+    }
+slides[slideIndex-1].style.display = "block";
+dots[slideIndex-1].className += " active";
+setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
+</body>
+</html>

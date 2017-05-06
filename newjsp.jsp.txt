@@ -1,0 +1,46 @@
+<%@ page contentType="text/html" language="java" import="java.sql.*" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>JSP Page</title>
+</head>
+<body>
+<%
+String u=request.getParameter("name");
+String v=request.getParameter("add");
+String w=request.getParameter("cont");
+String x=request.getParameter("state");
+String y=request.getParameter("city");
+String z=request.getParameter("pin");
+try
+{
+Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+Connection con=DriverManager.getConnection("jdbc:odbc:test");
+PreparedStatementrs=con.prepareStatement("INSERT INTO test VALUES(?,?,?,?,?,?)");
+rs.setString(1,u);
+rs.setString(2,v);
+rs.setString(3,w);
+rs.setString(4,x);
+rs.setString(5,y);
+rs.setString(6,z);
+inti=rs.executeUpdate();
+if(i!=0)
+{
+out.println("<h1><center>Thank you for purchasing!!!</center></h1>");
+out.println("<h1><center>Happy shopping on our website!!!</center></h1>");
+out.println("<h1><center>Your product will be delivered in five days from now!!!</center></h1>");
+}
+else
+{    
+out.println("Ordering failed!!!");
+}
+con.close();
+}
+catch(Exception ex)
+{
+out.println(ex);
+}
+%>
+</body>
+</html>
